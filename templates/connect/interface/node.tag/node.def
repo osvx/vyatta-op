@@ -1,7 +1,7 @@
 help: Bring up connection-oriented interface
 
 allowed: local -a array ;
-         array=( /etc/ppp/peers/pppoe* /etc/ppp/peers/pppoa* /etc/ppp/peers/wan* /etc/ppp/peers/wlm* ) ;
+         array=( /etc/ppp/peers/pppoe* /etc/ppp/peers/pppoa* /etc/ppp/peers/wan* /etc/ppp/peers/wlm* /etc/ppp/peers/pptpc* ) ;
          echo  -n ${array[@]##*/}
 
 run:

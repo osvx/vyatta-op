@@ -1,0 +1,2 @@
+help: Monitor PPPOE interfaces
+run: bmon -p pppoe*

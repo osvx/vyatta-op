@@ -22,7 +22,9 @@ declare -a types=(
        "vrrp" \
        "vti" \
        "dummy" \
-       "l2tpv3"
+       "l2tpv3" \
+       "pptp-client" \
+       "pppoe"
 )
 
 TEMPLATE_DIR=generated-templates/monitor/interfaces

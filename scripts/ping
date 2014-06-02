@@ -229,12 +229,19 @@ die "ping: Unknown host: $host\n"
     unless defined($ip);
 
 my $cmd;
-given ($ip->version) {
-    when (4) {	$cmd = '/bin/ping'; }
-    when (6) {	$cmd = '/bin/ping6' }
-    default {
+
+# Check address type
+if($ip->version == 4)
+{
+	$cmd = '/bin/ping';
+}
+elsif($ip->version == 6)
+{
+	$cmd = '/bin/ping6'
+}
+else
+{
 	die "Unknown address: $host\n";
-    }
 }
 
 my @cmdargs = ( 'ping' );

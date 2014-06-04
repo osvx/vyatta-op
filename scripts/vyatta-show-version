@@ -52,7 +52,7 @@ sub echo_file {
 
 # This follows the chain from /boot/grub/menu.cfg which
 # boots /boot/vmlinuz to find the version of kernel running
-sub get_image_type {
+sub get_image_type_old {
     my $kernel = readlink('/boot/vmlinuz');
     my $version;
 
@@ -78,6 +78,14 @@ sub get_image_type {
     if ($3 eq '-virt') {
 	$version .= " Virtual"
     }
+
+    return $version;
+}
+
+sub get_image_type {
+    my $version = `uname -r`;
+
+    chomp($version);
 
     return $version;
 }
